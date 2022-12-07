@@ -1,0 +1,20 @@
+- name: Add aliasses to bashrc file
+  become: false
+  lineinfile:
+    path: ~/.bashrc
+    create: yes
+    line: "{{ item.line }}"
+    state: "{{ item.state }}"
+  loop:
+  - line: 'alias tf="terraform"'
+    state: present
+  - line: 'alias tfp="terraform plan"'
+    state: present
+  - line: 'alias tfc="terraform apply"'
+    state: present
+  - line: 'alias tfcal="terraform apply --auto-approve"'
+    state: present
+  - line: 'alias tfd="terraform destroy"'
+    state: present
+  - line: 'alias tfdal="terraform destroy --auto-approve"'
+    state: present

@@ -1,0 +1,38 @@
+- name: Install required system packages
+  apt:
+    name={{ item }}
+    state=latest
+    update_cache=yes
+  loop: ['curl', 'gnupg', 'software-properties-common']
+  when: >
+    ansible_distribution == 'Debian'
+    or
+    ansible_distribution == 'Ubuntu'
+  register: apt_action
+  until: apt_action is success or ('Failed to lock apt for exclusive operation' not in apt_action.msg and '/var/lib/dpkg/lock' not in apt_action.msg)
+
+- name: Add Terraform GPG apt Key
+  apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+  when: >
+    ansible_distribution == 'Debian'
+    or
+    ansible_distribution == 'Ubuntu'
+
+- name: Add Terraform Repository
+  apt_repository:
+    repo: deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main
+    state: present
+  when: >
+    ansible_distribution == 'Debian'
+    or
+    ansible_distribution == 'Ubuntu'
+
+- name: Update apt and install Terraform
+  apt:
+    name=terraform
+    state=latest
+    update_cache=yes
+  register: apt_action
+  until: apt_action is success or ('Failed to lock apt for exclusive operation' not in apt_action.msg and '/var/lib/dpkg/lock' not in apt_action.msg)

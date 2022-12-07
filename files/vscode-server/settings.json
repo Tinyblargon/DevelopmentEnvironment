@@ -1,0 +1,67 @@
+{
+    "editor.linkedEditing": true,
+    "editor.stickyScroll.enabled": true,
+    "git.autofetch": true,
+    "workbench.editor.wrapTabs": true,
+    "terminal.integrated.scrollback": 10000,
+    "audioCues.onDebugBreak": "on",
+    "[go]": {
+        "editor.formatOnSave": true
+    },
+    "gopls": {
+        "ui.diagnostic.staticcheck": true
+    },
+    "go.formatTool": "goimports",
+    "explicitFolding.rules": {
+        "go":[
+            {
+                "begin": "import (",
+                "end": ")",
+                "autoFold": true,
+                "foldLastLine": true
+            }, 
+            {
+                "beginRegex": "\\{",
+                "middleRegex": "\\}[^}]+\\{",
+                "endRegex": "\\}"
+            }
+        ],
+        "html": {
+            "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>\/]*>",
+            "endRegex": "<\\/\\1>"
+        },
+        "vue":[ {
+            "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>\/]*>",
+            "endRegex": "<\\/\\1>"
+        }, 
+        {
+            "beginRegex": "\\{",
+            "middleRegex": "\\}[^}]+\\{",
+            "endRegex": "\\}"
+        }
+        ]
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "DEPRECATED",
+        "LEGACY"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "DEPRECATED": {
+            "icon": "x",
+            "iconColour": "red",
+            "foreground": "red",
+            "background": "black"
+        },
+        "LEGACY": {
+            "icon": "calendar",
+            "iconColour": "red"
+        }
+    }
+}

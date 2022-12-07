@@ -1,0 +1,37 @@
+- hosts: localhost
+  become: true
+  roles:
+    - role: juju4.golang
+      vars:
+        golang_gover: 1.18
+        golang_hash_linux_386: 'sha256:1c04cf4440b323a66328e0df95d409f955b9b475e58eae235fdd3d1f1cf02f4f'
+        golang_hash_linux_amd64: 'sha256:e85278e98f57cdb150fe8409e6e5df5343ecb13cebf03a5d5ff12bd55a80264f'
+  tasks:
+    - import_tasks: tasks/docker-install/main.yml
+      vars:
+        compose: true
+    - import_tasks: tasks/terraform-install.yml
+    - import_tasks: tasks/aliases-setup.yml
+    - import_tasks: tasks/go-tools.yml
+    - import_tasks: tasks/vscode-setup.yml
+      vars:
+        vscode_extensions: [
+          'tomoki1207.pdf',
+          'golang.go',
+          'hashicorp.terraform',
+          'ms-azuretools.vscode-docker',
+          'oderwat.indent-rainbow',
+          'jock.svg',
+          'yzhang.markdown-all-in-one',
+          'gruntfuggly.todo-tree',
+          'maxvanderschee.web-accessibility',
+          'usernamehw.errorlens',
+          'vivaxy.vscode-conventional-commits',
+          'jeff-hykin.polacode-2019',
+          'zokugun.explicit-folding',
+          'hangxingliu.vscode-systemd-support',
+          'streetsidesoftware.code-spell-checker',
+          'wix.vscode-import-cost',
+          '42crunch.vscode-openapi',
+          'george-alisson.html-preview-vscode'
+          ]

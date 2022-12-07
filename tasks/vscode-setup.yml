@@ -1,0 +1,25 @@
+- name: Start vscode on login
+  become: false
+  lineinfile:
+    state: present
+    path: ~/.profile
+    line: 'code ~'
+- name: copy vscode-server settings
+  become: false
+  ansible.builtin.copy:
+    src: ../files/vscode-server/settings.json
+    dest: ~/.vscode-server/data/Machine/settings.json
+
+- name: Find VScode path
+  become: false
+  shell: "/usr/bin/which code"
+  register: which_output
+- name: Set VScode Location
+  set_fact:
+    vscode_location: "{{ which_output.stdout }}"
+- debug: msg="{{vscode_location}}"
+
+- name: Install VScode extensions
+  become: false
+  shell: "{{vscode_location}} --install-extension {{ item }}"
+  loop: "{{vscode_extensions}}"

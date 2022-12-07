@@ -1,0 +1,30 @@
+- include_tasks: "install-debian.yml"
+  when: >
+    (uninstall is not defined
+    or
+    uninstall != true)
+    and
+    (ansible_distribution == 'Debian'
+    or
+    ansible_distribution == 'Ubuntu')
+
+- include_tasks: "uninstall-debian.yml"
+  when: >
+    (uninstall is defined
+    or
+    uninstall == true)
+    and
+    (ansible_distribution == 'Debian'
+    or
+    ansible_distribution == 'Ubuntu')
+
+- include_tasks: "uninstall-compose.yml"
+  when: (compose is not defined or compose != true)
+
+- name: adding existing users to the docker group
+  user:
+    name: '{{ item }}'
+    groups: docker
+    append: yes
+  loop: "{{docker_users}}"
+  when: (docker_users is defined) and (docker_users|length > 0)
