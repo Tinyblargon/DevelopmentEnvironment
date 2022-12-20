@@ -6,10 +6,10 @@
         golang_gover: 1.18
         golang_hash_linux_386: 'sha256:1c04cf4440b323a66328e0df95d409f955b9b475e58eae235fdd3d1f1cf02f4f'
         golang_hash_linux_amd64: 'sha256:e85278e98f57cdb150fe8409e6e5df5343ecb13cebf03a5d5ff12bd55a80264f'
-  tasks:
-    - import_tasks: tasks/docker-install/main.yml
+    - role: geerlingguy.docker
       vars:
-        compose: true
+        docker_install_compose: true
+  tasks:
     - import_tasks: tasks/terraform-install.yml
     - import_tasks: tasks/aliases-setup.yml
     - import_tasks: tasks/go-tools.yml
