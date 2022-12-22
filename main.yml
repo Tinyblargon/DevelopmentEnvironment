@@ -8,7 +8,7 @@
         golang_hash_linux_amd64: 'sha256:e85278e98f57cdb150fe8409e6e5df5343ecb13cebf03a5d5ff12bd55a80264f'
     - role: geerlingguy.docker
       vars:
-        docker_install_compose: true
+        docker_install_compose_plugin: true
   tasks:
     - import_tasks: tasks/terraform-install.yml
     - import_tasks: tasks/aliases-setup.yml
