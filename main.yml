@@ -1,5 +1,7 @@
 - hosts: localhost
   become: true
+  vars_files:
+    - secrets.yml
   roles:
     - role: juju4.golang
       vars:
@@ -9,6 +11,7 @@
     - role: geerlingguy.docker
       vars:
         docker_install_compose_plugin: true
+        docker_users: docker_users
   tasks:
     - import_tasks: tasks/terraform-install.yml
     - import_tasks: tasks/aliases-setup.yml
