@@ -36,5 +36,6 @@
           'streetsidesoftware.code-spell-checker',
           'wix.vscode-import-cost',
           '42crunch.vscode-openapi',
+          'gurumukhi.selected-lines-count',
           'george-alisson.html-preview-vscode'
           ]
