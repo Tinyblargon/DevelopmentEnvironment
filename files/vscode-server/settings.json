@@ -21,9 +21,9 @@
                 "foldLastLine": true
             }, 
             {
-                "beginRegex": "\\{",
-                "middleRegex": "\\}[^}]+\\{",
-                "endRegex": "\\}"
+                "beginRegex": "(?<!})\\{",
+                "middleRegex": "\\}[^{]*\\{(?!})",
+                "endRegex": "(?<!{})\\}"
             }
         ],
         "html": {
