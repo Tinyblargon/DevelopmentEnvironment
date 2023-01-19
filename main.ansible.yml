@@ -1,4 +1,5 @@
-- hosts: localhost
+- name: Setup development environment
+  hosts: localhost
   become: true
   vars_files:
     - secrets.yml
@@ -20,10 +21,14 @@
         ]
     - name: Install ansible lint
       ansible.builtin.import_tasks: tasks/ansible-lint-install.ansible.yml
-    - import_tasks: tasks/terraform-install.ansible.yml
-    - import_tasks: tasks/aliases-setup.ansible.yml
-    - import_tasks: tasks/go-tools.ansible.yml
-    - import_tasks: tasks/vscode-setup.ansible.yml
+    - name: Install Terraform
+      ansible.builtin.import_tasks: tasks/terraform-install.ansible.yml
+    - name: Setup Bash aliases
+      ansible.builtin.import_tasks: tasks/aliases-setup.ansible.yml
+    - name: Install GO tools
+      ansible.builtin.import_tasks: tasks/go-tools.ansible.yml
+    - name: Install VSCode extensions
+      ansible.builtin.import_tasks: tasks/vscode-setup.ansible.yml
       vars:
         vscode_extensions: [
           'tomoki1207.pdf',
@@ -46,4 +51,4 @@
           'gurumukhi.selected-lines-count',
           'redhat.ansible',
           'george-alisson.html-preview-vscode'
-          ]
+        ]

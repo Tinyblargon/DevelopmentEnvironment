@@ -13,5 +13,5 @@
 
 - name: Load Locales
   become: true
-  ansible.builtin.shell: "locale-gen"
+  ansible.builtin.command: "locale-gen"
   when: locales_updated is changed
