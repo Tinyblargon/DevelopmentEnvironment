@@ -36,5 +36,6 @@
           'wix.vscode-import-cost',
           '42crunch.vscode-openapi',
           'gurumukhi.selected-lines-count',
+          'redhat.ansible',
           'george-alisson.html-preview-vscode'
           ]
