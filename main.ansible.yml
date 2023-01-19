@@ -12,10 +12,10 @@
       vars:
         docker_install_compose_plugin: true
   tasks:
-    - import_tasks: tasks/terraform-install.yml
-    - import_tasks: tasks/aliases-setup.yml
-    - import_tasks: tasks/go-tools.yml
-    - import_tasks: tasks/vscode-setup.yml
+    - import_tasks: tasks/terraform-install.ansible.yml
+    - import_tasks: tasks/aliases-setup.ansible.yml
+    - import_tasks: tasks/go-tools.ansible.yml
+    - import_tasks: tasks/vscode-setup.ansible.yml
       vars:
         vscode_extensions: [
           'tomoki1207.pdf',
