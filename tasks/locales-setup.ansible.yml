@@ -1,0 +1,17 @@
+- name: Set locales
+  become: true
+  ansible.builtin.copy:
+    dest: /etc/locale.gen
+    content: |
+      {% for locale in locales %}
+      {{ locale }}
+      {% endfor %}
+    owner: root
+    group: root
+    mode: '0644'
+  register: locales_updated
+
+- name: Load Locales
+  become: true
+  ansible.builtin.shell: "locale-gen"
+  when: locales_updated is changed
