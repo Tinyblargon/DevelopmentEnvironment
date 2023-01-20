@@ -4,16 +4,24 @@
     state: present
     path: ~/.profile
     line: 'code ~'
+
 - name: Copy vscode-server settings
   become: false
   ansible.builtin.copy:
-    src: ../files/vscode-server/settings.json
+    src: ../files/vscode-server/machine.json
     dest: ~/.vscode-server/data/Machine/settings.json
+
+- name: Copy vscode-server settings
+  become: false
+  ansible.builtin.copy:
+    src: ../files/vscode-server/workspace-home.json
+    dest: ~/.vscode/settings.json
 
 - name: Find VScode path
   become: false
   ansible.builtin.command: "/usr/bin/which code"
   register: which_output
+
 - name: Set VScode Location
   ansible.builtin.set_fact:
     vscode_location: "{{ which_output.stdout }}"

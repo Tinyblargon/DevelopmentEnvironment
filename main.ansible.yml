@@ -50,5 +50,6 @@
           '42crunch.vscode-openapi',
           'gurumukhi.selected-lines-count',
           'redhat.ansible',
+          'jeremyfunk.hidefil',
           'george-alisson.html-preview-vscode'
         ]
