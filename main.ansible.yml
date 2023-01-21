@@ -51,5 +51,6 @@
           'gurumukhi.selected-lines-count',
           'redhat.ansible',
           'jeremyfunk.hidefil',
+          'hediet.vscode-drawio',
           'george-alisson.html-preview-vscode'
         ]
