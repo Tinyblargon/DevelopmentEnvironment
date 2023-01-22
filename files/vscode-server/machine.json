@@ -21,7 +21,7 @@
                 "foldLastLine": true
             }, 
             {
-                "beginRegex": "(?<!})\\{",
+                "beginRegex": "(?<!}{)\\{",
                 "middleRegex": "\\}[^{]*\\{(?!})",
                 "endRegex": "(?<!{})\\}"
             }
