@@ -5,6 +5,9 @@
     "workbench.editor.wrapTabs": true,
     "terminal.integrated.scrollback": 10000,
     "audioCues.onDebugBreak": "on",
+    "files.associations": {
+        "main.yml": "ansible"
+    },
     "[go]": {
         "editor.formatOnSave": true
     },
