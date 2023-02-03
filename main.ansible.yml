@@ -38,6 +38,7 @@
           'oderwat.indent-rainbow',
           'jock.svg',
           'yzhang.markdown-all-in-one',
+          'davidanson.vscode-markdownlint',
           'gruntfuggly.todo-tree',
           'maxvanderschee.web-accessibility',
           'usernamehw.errorlens',
