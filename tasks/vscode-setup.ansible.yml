@@ -11,6 +11,13 @@
     src: ../files/vscode-server/machine.json
     dest: ~/.vscode-server/data/Machine/settings.json
 
+- name: Create .vscode directory
+  become: false
+  ansible.builtin.file:
+    path: ~/.vscode
+    state: directory
+    mode: 0755
+
 - name: Copy vscode-server settings
   become: false
   ansible.builtin.copy:
