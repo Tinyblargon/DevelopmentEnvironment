@@ -52,5 +52,6 @@
           'redhat.ansible',
           'jeremyfunk.hidefiles',
           'hediet.vscode-drawio',
+          'samuelcolvin.jinjahtml',
           'george-alisson.html-preview-vscode'
         ]
