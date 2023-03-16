@@ -4,17 +4,12 @@
     path: ~/.bashrc
     create: true
     line: "{{ item.line }}"
-    state: "{{ item.state }}"
+    state: "present"
   loop:
     - line: 'alias tf="terraform"'
-      state: present
     - line: 'alias tfp="terraform plan"'
-      state: present
     - line: 'alias tfc="terraform apply"'
-      state: present
     - line: 'alias tfcal="terraform apply --auto-approve"'
-      state: present
     - line: 'alias tfd="terraform destroy"'
-      state: present
     - line: 'alias tfdal="terraform destroy --auto-approve"'
-      state: present
+    - line: 'alias goc="go clean -testcache"'
