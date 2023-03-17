@@ -1,3 +1,5 @@
 collections:
-  - name: darkwizard242.go
-  - name: geerlingguy.docker
+
+roles:
+  - src: darkwizard242.go
+  - src: geerlingguy.docker
