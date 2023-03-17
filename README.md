@@ -6,13 +6,22 @@ My Development Environment
 
 ```bash
 cd DevelopmentEnvironment
+```
+
+## Populate Secrets
+
+```bash
 cp secrets.yml.example secrets.yml --no-clobber
 ```
 
-populate secrets in secrets.yml
+## Import Ansible Roles
 
 ```bash
-ansible-galaxy install darkwizard242.go
-ansible-galaxy install geerlingguy.docker
+ansible-galaxy install --force --role-file requirements.ansible.yml
+```
+
+## Deploy
+
+```bash
 ansible-playbook -K main.yml
 ```
