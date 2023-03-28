@@ -13,4 +13,6 @@
     - line: 'alias tfd="terraform destroy"'
     - line: 'alias tfdal="terraform destroy --auto-approve"'
     - line: 'alias tfdebug="export "TF_LOG"=DEBUG"'
+    - line: 'alias tfwarn="export "TF_LOG"=WARN"'
+    - line: 'alias tfinfo="export "TF_LOG"=INFO"'
     - line: 'alias goc="go clean -testcache"'
