@@ -12,6 +12,7 @@
         "editor.formatOnSave": true
     },
     "gopls": {
+        "ui.semanticTokens": true,
         "ui.diagnostic.staticcheck": true
     },
     "go.formatTool": "goimports",
