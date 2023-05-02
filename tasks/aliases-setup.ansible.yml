@@ -16,3 +16,4 @@
     - line: 'alias tfwarn="export "TF_LOG"=WARN"'
     - line: 'alias tfinfo="export "TF_LOG"=INFO"'
     - line: 'alias goc="go clean -testcache"'
+    - line: 'alias staticcheck="~/go/bin/staticcheck"'
