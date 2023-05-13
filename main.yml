@@ -6,7 +6,7 @@
   roles:
     - role: darkwizard242.go
       vars:
-        go_version: "1.20"
+        go_version: "1.20.4"
         go_setup: true
     - role: geerlingguy.docker
       vars:
