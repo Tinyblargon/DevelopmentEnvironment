@@ -53,5 +53,6 @@
           'jeremyfunk.hidefiles',
           'hediet.vscode-drawio',
           'samuelcolvin.jinjahtml',
+          'mads-hartmann.bash-ide-vscode',
           'george-alisson.html-preview-vscode'
         ]
