@@ -70,5 +70,7 @@
             "icon": "calendar",
             "iconColour": "red"
         }
-    }
+    },
+    "vscord.app.name": "Visual Studio Code",
+    "vscord.app.privacyMode.enable": true
 }
