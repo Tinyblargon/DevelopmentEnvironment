@@ -1,4 +1,7 @@
 {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 13,
     "editor.linkedEditing": true,
     "editor.stickyScroll.enabled": true,
     "git.autofetch": true,
