@@ -72,5 +72,9 @@
         }
     },
     "vscord.app.name": "Visual Studio Code",
-    "vscord.app.privacyMode.enable": true
+    "vscord.app.privacyMode.enable": true,
+    "vscord.behaviour.additionalFileMapping": {
+        "ansible.yml": "ansible",
+        "main.yml": "ansible"
+    }
 }
