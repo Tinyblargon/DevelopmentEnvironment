@@ -3,6 +3,7 @@
     name: python3-pip
     state: latest
     update_cache: true
+    cache_valid_time: 900
   when: >
     ansible_distribution == 'Debian'
     or
