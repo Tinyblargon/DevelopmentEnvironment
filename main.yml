@@ -55,5 +55,6 @@
           'samuelcolvin.jinjahtml',
           'mads-hartmann.bash-ide-vscode',
           'leonardssh.vscord',
+          'ahmadalli.vscode-nginx-conf',
           'george-alisson.html-preview-vscode'
         ]
