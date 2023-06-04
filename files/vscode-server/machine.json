@@ -56,10 +56,17 @@
         "XXX",
         "[ ]",
         "[x]",
+        "Deprecated",
         "DEPRECATED",
         "LEGACY"
     ],
     "todo-tree.highlights.customHighlight": {
+        "Deprecated": {
+            "icon": "x",
+            "iconColour": "red",
+            "foreground": "red",
+            "background": "black"
+        },
         "DEPRECATED": {
             "icon": "x",
             "iconColour": "red",
