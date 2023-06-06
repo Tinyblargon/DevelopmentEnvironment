@@ -3,6 +3,7 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
     "editor.linkedEditing": true,
+    "editor.minimap.renderCharacters": false,
     "editor.stickyScroll.enabled": true,
     "git.autofetch": true,
     "workbench.editor.wrapTabs": true,
