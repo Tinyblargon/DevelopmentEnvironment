@@ -1,7 +1,6 @@
-- name: Install pip3
+- name: Install ansible-lint
   ansible.builtin.apt:
-    name: python3-pip
-    state: latest
+    name: ansible-lint
     update_cache: true
     cache_valid_time: 900
   when: >
@@ -10,8 +9,3 @@
     ansible_distribution == 'Ubuntu'
   register: apt_action
   until: apt_action is success or ('Failed to lock apt for exclusive operation' not in apt_action.msg and '/var/lib/dpkg/lock' not in apt_action.msg)
-
-- name: Install ansible_lint
-  ansible.builtin.pip:
-    name: "ansible-lint"
-    state: present
