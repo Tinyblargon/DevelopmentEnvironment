@@ -5,6 +5,7 @@
     "editor.linkedEditing": true,
     "editor.minimap.renderCharacters": false,
     "editor.stickyScroll.enabled": true,
+    "explorer.excludeGitIgnore": false,
     "git.autofetch": true,
     "workbench.editor.wrapTabs": true,
     "terminal.integrated.scrollback": 10000,
