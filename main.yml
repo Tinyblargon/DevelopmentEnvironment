@@ -56,5 +56,6 @@
           'mads-hartmann.bash-ide-vscode',
           'leonardssh.vscord',
           'ahmadalli.vscode-nginx-conf',
+          'tyriar.sort-lines',
           'george-alisson.html-preview-vscode'
         ]
