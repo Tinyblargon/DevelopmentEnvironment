@@ -25,3 +25,9 @@ ansible-galaxy install --force --role-file requirements.ansible.yml
 ```bash
 ansible-playbook -K main.yml
 ```
+
+### Manual steps
+
+Sadly some things can't be automated
+
+- add the `tomoki1207.pdf` vscode extension manually.

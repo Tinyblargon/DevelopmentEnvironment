@@ -30,7 +30,6 @@
       ansible.builtin.import_tasks: tasks/vscode-setup.ansible.yml
       vars:
         vscode_extensions: [
-          'tomoki1207.pdf',
           'golang.go',
           'hashicorp.terraform',
           'ms-azuretools.vscode-docker',

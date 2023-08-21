@@ -41,3 +41,10 @@
   become: false
   ansible.builtin.command: "{{ vscode_location }} --install-extension {{ item }}"
   loop: "{{ vscode_extensions }}"
+  register: vscode_extensions_output
+  changed_when: >-
+    "is already installed."
+    not in vscode_extensions_output.stdout
+  failed_when: >-
+    "\nCannot install the"
+    in vscode_extensions_output.stdout
