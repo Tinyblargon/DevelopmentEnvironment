@@ -13,6 +13,14 @@
     "files.associations": {
         "main.yml": "ansible"
     },
+    "[ansible]": {
+        "editor.rulers": [
+            {
+                "column": 80,
+                "color": "#ff0000"
+            }
+        ]
+    },
     "[go]": {
         "editor.formatOnSave": true
     },
