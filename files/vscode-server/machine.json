@@ -17,6 +17,10 @@
         "editor.rulers": [
             {
                 "column": 80,
+                "color": "#FFA500"
+            },
+            {
+                "column": 160,
                 "color": "#ff0000"
             }
         ]
