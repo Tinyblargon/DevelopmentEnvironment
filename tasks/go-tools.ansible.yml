@@ -1,3 +1,4 @@
+---
 - name: Update apt and install dependencies for delv debugger
   ansible.builtin.apt:
     name: gcc
@@ -16,3 +17,5 @@
     'honnef.co/go/tools/cmd/staticcheck@latest',
     'golang.org/x/tools/gopls@latest'
   ]
+  register: go_install
+  changed_when: go_install.stderr != ""
