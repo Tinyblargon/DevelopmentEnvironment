@@ -1,3 +1,4 @@
+---
 - name: Setup development environment
   hosts: localhost
   become: true
