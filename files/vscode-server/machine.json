@@ -11,7 +11,8 @@
     "terminal.integrated.scrollback": 10000,
     "audioCues.onDebugBreak": "on",
     "files.associations": {
-        "main.yml": "ansible"
+        "main.yml": "ansible",
+        "requirements.yml": "ansible"
     },
     "[ansible]": {
         "editor.rulers": [
