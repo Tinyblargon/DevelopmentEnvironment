@@ -21,6 +21,11 @@
         ]
     - name: Install ansible lint
       ansible.builtin.import_tasks: tasks/ansible-lint-install.ansible.yml
+    - name: Install inkscape
+      ansible.builtin.apt:
+        name: inkscape
+        state: present
+        cache_valid_time: 900
     - name: Install Terraform
       ansible.builtin.import_tasks: tasks/terraform-install.ansible.yml
     - name: Setup Bash aliases
