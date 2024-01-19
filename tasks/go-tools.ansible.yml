@@ -2,7 +2,6 @@
 - name: Update apt and install dependencies for delv debugger
   ansible.builtin.apt:
     name: gcc
-    state: latest
     update_cache: true
     cache_valid_time: 900
   register: apt_action
