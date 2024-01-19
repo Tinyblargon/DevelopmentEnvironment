@@ -20,7 +20,11 @@
         oh_my_zsh_users: "{{ local_users }}"
         oh_my_zsh_theme: robbyrussell
         oh_my_zsh_plugins:
+          - docker
+          - docker-compose
           - git
+          - terraform
+          - vscode
         oh_my_zsh_aliases:
           - name: tf
             command: terraform
