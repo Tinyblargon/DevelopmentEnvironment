@@ -72,6 +72,8 @@
     - name: Install VSCode extensions
       ansible.builtin.import_tasks: tasks/vscode-setup.ansible.yml
       vars:
+        vscode_machine_config: >-
+          {{ lookup('file', './files/vscode-server/machine.json') }}
         vscode_extensions: [
           'golang.go',
           'hashicorp.terraform',
