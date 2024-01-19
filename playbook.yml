@@ -12,7 +12,42 @@
     - role: geerlingguy.docker
       vars:
         docker_install_compose_plugin: true
+        docker_users: "{{ local_users }}"
   tasks:
+    - name: Setup oh-my-zsh
+      ansible.builtin.import_tasks: tasks/oh-my-zsh.ansible.yml
+      vars:
+        oh_my_zsh_users: "{{ local_users }}"
+        oh_my_zsh_theme: robbyrussell
+        oh_my_zsh_plugins:
+          - git
+        oh_my_zsh_aliases:
+          - name: tf
+            command: terraform
+          - name: tfc
+            command: terraform apply
+          - name: tfcal
+            command: terraform apply --auto-approve
+          - name: tfd
+            command: terraform destroy
+          - name: tfdal
+            command: terraform destroy --auto-approve
+          - name: tfi
+            command: terraform init
+          - name: tfp
+            command: terraform plan
+          - name: tfdebug
+            command: export "TF_LOG"=DEBUG
+          - name: tftrace
+            command: export "TF_LOG"=TRACE
+          - name: tfwarn
+            command: export "TF_LOG"=WARN
+          - name: tfinfo
+            command: export "TF_LOG"=INFO
+          - name: goc
+            command: go clean -testcache
+          - name: staticcheck
+            command: ~/go/bin/staticcheck
     - name: Set system locales
       ansible.builtin.import_tasks: tasks/locales-setup.ansible.yml
       vars:
@@ -28,8 +63,6 @@
         cache_valid_time: 900
     - name: Install Terraform
       ansible.builtin.import_tasks: tasks/terraform-install.ansible.yml
-    - name: Setup Bash aliases
-      ansible.builtin.import_tasks: tasks/aliases-setup.ansible.yml
     - name: Install GO tools
       ansible.builtin.import_tasks: tasks/go-tools.ansible.yml
     - name: Install VSCode extensions

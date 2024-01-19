@@ -1,0 +1,38 @@
+---
+- name: Ensure zsh is installed
+  ansible.builtin.apt:
+    name: "zsh"
+    cache_valid_time: 3600
+    state: present
+
+- name: Downdload oh-my-zsh
+  ansible.builtin.git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: "/home/{{ item }}/.oh-my-zsh"
+    depth: 1
+    force: true
+    single_branch: true
+    version: master
+  loop: "{{ oh_my_zsh_users }}"
+
+- name: Configure .zshrc
+  ansible.builtin.template:
+    src: ./template/zshrc.j2
+    dest: "/home/{{ item }}/.zshrc"
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: "0644"
+  loop: "{{ oh_my_zsh_users }}"
+
+- name: Check where zsh is installed
+  ansible.builtin.command: which zsh
+  register: zsh_location
+  changed_when: false
+
+- name: Set zsh as default shell
+  ansible.builtin.user:
+    name: "{{ item }}"
+    shell: "{{ zsh_location.stdout }}"
+    update_password: on_create
+  loop: "{{ oh_my_zsh_users }}"
+  when: zsh_location.stdout != ""
