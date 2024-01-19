@@ -1,10 +1,4 @@
-- name: Start vscode on login
-  become: false
-  ansible.builtin.lineinfile:
-    state: present
-    path: ~/.profile
-    line: 'code ~'
-
+---
 - name: Copy vscode-server settings
   become: false
   ansible.builtin.copy:
