@@ -23,7 +23,7 @@ ansible-galaxy install --force --role-file requirements.ansible.yml
 ## Deploy
 
 ```bash
-ansible-playbook -K main.yml
+ansible-playbook -K playbook.yml
 ```
 
 ### Manual steps
