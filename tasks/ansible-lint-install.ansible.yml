@@ -2,7 +2,6 @@
 - name: Install ansible-lint
   ansible.builtin.apt:
     name: ansible-lint
-    update_cache: true
     cache_valid_time: 900
   when: >
     ansible_distribution == 'Debian'

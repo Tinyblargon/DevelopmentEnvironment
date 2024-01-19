@@ -2,7 +2,6 @@
 - name: Install required system packages
   ansible.builtin.apt:
     name: "{{ item }}"
-    update_cache: true
     cache_valid_time: 900
   loop: ['curl', 'gnupg', 'software-properties-common']
   when: >
@@ -33,7 +32,6 @@
 - name: Update apt and install Terraform
   ansible.builtin.apt:
     name: terraform
-    update_cache: true
     cache_valid_time: 900
   register: apt_action
   until: apt_action is success or ('Failed to lock apt for exclusive operation' not in apt_action.msg and '/var/lib/dpkg/lock' not in apt_action.msg)
