@@ -9,20 +9,28 @@
 - name: Create .vscode directory
   become: false
   ansible.builtin.file:
-    path: ~/.vscode
+    path: "{{ item.path }}/.vscode"
     state: directory
     mode: "0755"
+  loop: "{{ vscode_workpaces | default([]) }}"
+  loop_control:
+    label: "{{ item }}"
 
 - name: Copy vscode-server settings
   become: false
   ansible.builtin.copy:
-    src: ../files/vscode-server/workspace-home.json
-    dest: ~/.vscode/settings.json
+    content: "{{ item.config }}"
+    dest: "{{ item.path }}/.vscode/settings.json"
+    mode: "0644"
+  loop: "{{ vscode_workspaces | default([]) }}"
+  loop_control:
+    label: "{{ item }}"
 
 - name: Find VScode path
   become: false
   ansible.builtin.command: "/usr/bin/which code"
   register: which_output
+  changed_when: false
 
 - name: Set VScode Location
   ansible.builtin.set_fact:

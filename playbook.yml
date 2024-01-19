@@ -74,6 +74,10 @@
       vars:
         vscode_machine_config: >-
           {{ lookup('file', './files/vscode-server/machine.json') }}
+        vscode_workspaces:
+          - path: "~"
+            config: >-
+              {{ lookup('file', './files/vscode-server/workspace-home.json') }}
         vscode_extensions: [
           'golang.go',
           'hashicorp.terraform',
