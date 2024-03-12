@@ -1,15 +1,35 @@
 {
+    "accessibility.signals.onDebugBreak": {
+        "sound": "on"
+    },
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
+    "editor.inlineSuggest.enabled": true,
     "editor.linkedEditing": true,
     "editor.minimap.renderCharacters": false,
     "editor.stickyScroll.enabled": true,
+    "explorer.confirmDragAndDrop": false,
     "explorer.excludeGitIgnore": false,
     "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    "go.formatTool": "goimports",
+    "go.toolsManagement.autoUpdate": false,
+    "gopls": {
+        "ui.semanticTokens": true,
+        "ui.diagnostic.staticcheck": true
+    },
+    "hidefiles.version": "2.0.0",
+    "redhat.telemetry.enabled": false,
     "workbench.editor.wrapTabs": true,
     "terminal.integrated.scrollback": 10000,
-    "audioCues.onDebugBreak": "on",
     "files.associations": {
         "main.yml": "ansible",
         "requirements.yml": "ansible"
@@ -29,11 +49,17 @@
     "[go]": {
         "editor.formatOnSave": true
     },
-    "gopls": {
-        "ui.semanticTokens": true,
-        "ui.diagnostic.staticcheck": true
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
     },
-    "go.formatTool": "goimports",
     "explicitFolding.rules": {
         "go":[
             {
