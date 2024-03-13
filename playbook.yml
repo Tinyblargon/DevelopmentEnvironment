@@ -54,6 +54,8 @@
             command: ~/go/bin/staticcheck
           - name: dlv
             command: ~/go/bin/dlv
+          - name: x
+            command: export
     - name: Set system locales
       ansible.builtin.import_tasks: tasks/locales-setup.ansible.yml
       vars:
