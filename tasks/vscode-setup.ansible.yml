@@ -51,3 +51,4 @@
   failed_when: >-
     "\nCannot install the"
     in vscode_extensions_output.stdout
+  when: vscode_extensions is defined
