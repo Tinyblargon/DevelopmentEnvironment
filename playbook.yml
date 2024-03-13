@@ -69,6 +69,8 @@
       ansible.builtin.import_tasks: tasks/terraform-install.ansible.yml
     - name: Install GO tools
       ansible.builtin.import_tasks: tasks/go-tools.ansible.yml
+      vars:
+        go_path: "/usr/local/go"
     - name: Install VSCode extensions
       ansible.builtin.import_tasks: tasks/vscode-setup.ansible.yml
       vars:
