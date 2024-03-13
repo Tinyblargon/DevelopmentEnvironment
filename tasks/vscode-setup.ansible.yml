@@ -14,7 +14,7 @@
     mode: "0755"
   loop: "{{ vscode_workpaces | default([]) }}"
   loop_control:
-    label: "{{ item }}"
+    label: "{{ item.path }}"
 
 - name: Copy vscode-server settings
   become: false
@@ -24,7 +24,7 @@
     mode: "0644"
   loop: "{{ vscode_workspaces | default([]) }}"
   loop_control:
-    label: "{{ item }}"
+    label: "{{ item.path }}"
 
 - name: Find VScode path
   become: false
