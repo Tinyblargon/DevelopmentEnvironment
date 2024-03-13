@@ -52,6 +52,8 @@
             command: go clean -testcache
           - name: staticcheck
             command: ~/go/bin/staticcheck
+          - name: dlv
+            command: ~/go/bin/dlv
     - name: Set system locales
       ansible.builtin.import_tasks: tasks/locales-setup.ansible.yml
       vars:
