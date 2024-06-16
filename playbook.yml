@@ -40,6 +40,8 @@
             command: terraform init
           - name: tfp
             command: terraform plan
+          - name: tfplan
+            command: terraform plan
           - name: tfdebug
             command: export "TF_LOG"=DEBUG
           - name: tftrace
