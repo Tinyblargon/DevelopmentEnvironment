@@ -114,6 +114,7 @@
           'ahmadalli.vscode-nginx-conf',
           'tyriar.sort-lines',
           'eamodio.gitlens',
+          'alefragnani.bookmarks',
           'github.copilot',
           'george-alisson.html-preview-vscode'
         ]
