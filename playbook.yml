@@ -113,6 +113,7 @@
           'leonardssh.vscord',
           'ahmadalli.vscode-nginx-conf',
           'tyriar.sort-lines',
+          'eamodio.gitlens',
           'github.copilot',
           'george-alisson.html-preview-vscode'
         ]
