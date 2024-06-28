@@ -42,6 +42,10 @@
             command: terraform plan
           - name: tfplan
             command: terraform plan
+          - name: tfr
+            command: terraform refresh
+          - name: tfrefresh
+            command: terraform refresh
           - name: tfdebug
             command: export "TF_LOG"=DEBUG
           - name: tftrace
