@@ -46,6 +46,10 @@
               - tfr
               - tfrefresh
             command: terraform refresh
+          - name:
+              - tfs
+              - tfshow
+            command: terraform show
           - name: tfdebug
             command: export "TF_LOG"=DEBUG
           - name: tftrace
