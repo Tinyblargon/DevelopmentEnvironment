@@ -38,13 +38,13 @@
             command: terraform destroy --auto-approve
           - name: tfi
             command: terraform init
-          - name: tfp
+          - name:
+              - tfp
+              - tfplan
             command: terraform plan
-          - name: tfplan
-            command: terraform plan
-          - name: tfr
-            command: terraform refresh
-          - name: tfrefresh
+          - name:
+              - tfr
+              - tfrefresh
             command: terraform refresh
           - name: tfdebug
             command: export "TF_LOG"=DEBUG

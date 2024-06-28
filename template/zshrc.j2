@@ -102,5 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 {% for alias in oh_my_zsh_aliases | default([]) %}
+{% if alias.name is string and alias.name is iterable%}
 alias {{ alias.name }}="{{ alias.command }}"
+{% else %}
+{% for name in alias.name | default([]) %}
+alias {{ name }}="{{ alias.command }}"
+{% endfor %}
+{% endif %}
 {% endfor %}
