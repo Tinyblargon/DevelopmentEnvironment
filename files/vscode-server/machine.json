@@ -2,6 +2,7 @@
     "accessibility.signals.onDebugBreak": {
         "sound": "on"
     },
+    "conventionalCommits.gitmoji": false,
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
