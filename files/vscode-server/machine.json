@@ -79,6 +79,18 @@
             "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>\/]*>",
             "endRegex": "<\\/\\1>"
         },
+        "json": [
+            {
+                "beginRegex": "\\{",
+                "middleRegex": "\\}[^}]+\\{",
+                "endRegex": "\\}"
+            },
+            {
+                "beginRegex": "\\[",
+                "middleRegex": "\\][^]]+\\[",
+                "endRegex": "\\]"
+            }
+        ],
         "vue":[ {
             "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>\/]*>",
             "endRegex": "<\\/\\1>"
