@@ -36,6 +36,8 @@
         "requirements.yml": "ansible"
     },
     "[ansible]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
         "editor.rulers": [
             {
                 "column": 80,
