@@ -49,6 +49,8 @@
     "is already installed."
     not in vscode_extensions_output.stdout
   failed_when: >-
-    "\nCannot install the"
-    in vscode_extensions_output.stdout
+    ("\nCannot install the"
+    in vscode_extensions_output.stdout)
+    or ("\nFailed Installing"
+    in vscode_extensions_output.stdout)
   when: vscode_extensions is defined
