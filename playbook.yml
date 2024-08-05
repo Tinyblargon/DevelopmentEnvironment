@@ -69,9 +69,8 @@
     - name: Set system locales
       ansible.builtin.import_tasks: tasks/locales-setup.ansible.yml
       vars:
-        locales: [
-          'en_US.UTF-8 UTF-8'
-        ]
+        locales:
+          - "en_US.UTF-8 UTF-8"
     - name: Install ansible lint
       ansible.builtin.import_tasks: tasks/ansible-lint-install.ansible.yml
     - name: Install inkscape
@@ -94,34 +93,33 @@
           - path: "~"
             config: >-
               {{ lookup('file', './files/vscode-server/workspace-home.json') }}
-        vscode_extensions: [
-          'golang.go',
-          'hashicorp.terraform',
-          'ms-azuretools.vscode-docker',
-          'oderwat.indent-rainbow',
-          'jock.svg',
-          'davidanson.vscode-markdownlint',
-          'gruntfuggly.todo-tree',
-          'usernamehw.errorlens',
-          'vivaxy.vscode-conventional-commits',
-          'jeff-hykin.polacode-2019',
-          'zokugun.explicit-folding',
-          'meezilla.json',
-          'hangxingliu.vscode-systemd-support',
-          'streetsidesoftware.code-spell-checker',
-          'wix.vscode-import-cost',
-          '42crunch.vscode-openapi',
-          'gurumukhi.selected-lines-count',
-          'redhat.ansible',
-          'jeremyfunk.hidefiles',
-          'hediet.vscode-drawio',
-          'samuelcolvin.jinjahtml',
-          'mads-hartmann.bash-ide-vscode',
-          'leonardssh.vscord',
-          'ahmadalli.vscode-nginx-conf',
-          'tyriar.sort-lines',
-          'eamodio.gitlens',
-          'alefragnani.bookmarks',
-          'github.copilot',
-          'george-alisson.html-preview-vscode'
-        ]
+        vscode_extensions:
+          - redhat.ansible
+          - mads-hartmann.bash-ide-vscode
+          - alefragnani.bookmarks
+          - streetsidesoftware.code-spell-checker
+          - github.copilot
+          - usernamehw.errorlens
+          - zokugun.explicit-folding
+          - golang.go
+          - eamodio.gitlens
+          - george-alisson.html-preview-vscode
+          - jeremyfunk.hidefiles
+          - oderwat.indent-rainbow
+          - meezilla.json
+          - samuelcolvin.jinjahtml
+          - jeff-hykin.polacode-2019
+          - gurumukhi.selected-lines-count
+          - tyriar.sort-lines
+          - jock.svg
+          - hashicorp.terraform
+          - gruntfuggly.todo-tree
+          - leonardssh.vscord
+          - vivaxy.vscode-conventional-commits
+          - ms-azuretools.vscode-docker
+          - hediet.vscode-drawio
+          - 42crunch.vscode-openapi
+          - davidanson.vscode-markdownlint
+          - hangxingliu.vscode-systemd-suppor
+          - ahmadalli.vscode-nginx-conf
+          - wix.vscode-import-cost

@@ -3,7 +3,10 @@
   ansible.builtin.apt:
     name: "{{ item }}"
     cache_valid_time: 900
-  loop: ['curl', 'gnupg', 'software-properties-common']
+  loop:
+    - curl
+    - gnupg
+    - software-properties-common
   when: >
     ansible_distribution == 'Debian'
     or
