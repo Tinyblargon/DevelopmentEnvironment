@@ -29,6 +29,12 @@
     },
     "hidefiles.version": "2.0.0",
     "redhat.telemetry.enabled": false,
+    "workbench.editor.customLabels.patterns": {
+        "**/*.ansible.yml": "${filename} (${extname(1)})",
+        "**/*.nginx.conf": "${filename} (${extname(1)})",
+        "**/README.md": "README",
+        "**/main.yml": "${dirname}/main.yml"
+    },
     "workbench.editor.wrapTabs": true,
     "terminal.integrated.scrollback": 10000,
     "files.associations": {
