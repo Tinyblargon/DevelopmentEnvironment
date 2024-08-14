@@ -11,13 +11,14 @@
     go_path_tmp: "{{ go_path | default(lookup('env', 'GOPATH')) + '/bin/go' }}"
 
 - name: Install go modules
-  become: false
   ansible.builtin.command: "{{ go_path_tmp }} install {{ item }}"
   loop:
     - github.com/go-delve/delve/cmd/dlv@latest
     - golang.org/x/tools/cmd/goimports@latest
     - honnef.co/go/tools/cmd/staticcheck@latest
     - golang.org/x/tools/gopls@latest
+  environment:
+    GOPATH: "{{ go_path | default(lookup('env', 'GOPATH')) }}"
   register: go_install
   when: go_path != "/bin/go"
   changed_when: go_install.stderr != ""
