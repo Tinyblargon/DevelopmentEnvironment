@@ -25,6 +25,9 @@
           - git
           - terraform
           - vscode
+        oh_my_zsh_exports:
+          - name: PATH
+            value: $PATH:/usr/local/go/bin
         oh_my_zsh_aliases:
           - name: tf
             command: terraform
@@ -60,10 +63,6 @@
             command: export "TF_LOG"=INFO
           - name: goc
             command: go clean -testcache
-          - name: staticcheck
-            command: ~/go/bin/staticcheck
-          - name: dlv
-            command: ~/go/bin/dlv
           - name: x
             command: export
     - name: Set system locales
