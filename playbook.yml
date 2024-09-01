@@ -63,6 +63,10 @@
             command: export "TF_LOG"=INFO
           - name: goc
             command: go clean -testcache
+          - name:
+              - gocover
+              - gocoverage
+            command: go test -coverprofile=coverage.out ./...&&go tool cover -html=coverage.out -o coverage.html
           - name: x
             command: export
     - name: Set system locales
