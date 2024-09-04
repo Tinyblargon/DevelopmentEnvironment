@@ -31,6 +31,7 @@
     "redhat.telemetry.enabled": false,
     "workbench.editor.customLabels.patterns": {
         "**/*.ansible.yml": "${filename} (${extname(1)})",
+        "**/*.go": "${filename}",
         "**/*.nginx.conf": "${filename} (${extname(1)})",
         "**/README.md": "README",
         "**/main.yml": "${dirname}/main.yml"
