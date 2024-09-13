@@ -3,6 +3,7 @@
         "sound": "on"
     },
     "conventionalCommits.gitmoji": false,
+    "conventionalCommits.promptScopes": false,
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
