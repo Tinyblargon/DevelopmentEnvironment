@@ -9,6 +9,6 @@
 
 - name: Install "vue cli" node.js package globally.
   community.general.npm:
-    name: '@vue/cli'
+    name: "@vue/cli"
     global: true
     state: latest

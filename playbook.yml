@@ -4,18 +4,10 @@
   become: true
   vars_files:
     - secrets.yml
-  roles:
-    - role: darkwizard242.go
-      vars:
-        go_version: "1.21.0"
-        go_setup: true
-    - role: geerlingguy.docker
-      vars:
-        docker_install_compose_plugin: true
-        docker_users: "{{ local_users }}"
   tasks:
     - name: Setup oh-my-zsh
-      ansible.builtin.import_tasks: tasks/oh-my-zsh.ansible.yml
+      ansible.builtin.import_tasks:
+        file: ansible/oh_my_zsh/tasks/main.ansible.yml
       vars:
         oh_my_zsh_users: "{{ local_users }}"
         oh_my_zsh_theme: robbyrussell
@@ -72,32 +64,49 @@
           - name: x
             command: export
     - name: Set system locales
-      ansible.builtin.import_tasks: tasks/locales-setup.ansible.yml
+      ansible.builtin.import_tasks:
+        file: ansible/locales/tasks/main.ansible.yml
       vars:
         locales:
           - "en_US.UTF-8 UTF-8"
     - name: Install ansible lint
-      ansible.builtin.import_tasks: tasks/ansible-lint-install.ansible.yml
+      ansible.builtin.import_tasks:
+        file: ansible/ansible_lint/tasks/main.ansible.yml
     - name: Install inkscape
       ansible.builtin.apt:
         name: inkscape
         state: present
         cache_valid_time: 900
+    - name: Install Docker
+      ansible.builtin.include_role:
+        name: geerlingguy.docker
+      vars:
+        docker_install_compose_plugin: true
+        docker_users: "{{ local_users }}"
     - name: Install Terraform
-      ansible.builtin.import_tasks: tasks/terraform-install.ansible.yml
+      ansible.builtin.import_tasks:
+        file: ansible/terraform/tasks/main.ansible.yml
+    - name: Install GO
+      ansible.builtin.include_role:
+        name: darkwizard242.go
+      vars:
+        go_version: "1.21.0"
+        go_setup: true
     - name: Install GO tools
-      ansible.builtin.import_tasks: tasks/go-tools.ansible.yml
+      ansible.builtin.import_tasks:
+        file: ansible/go_tools/tasks/main.ansible.yml
       vars:
         go_path: "/usr/local/go"
     - name: Install VSCode extensions
-      ansible.builtin.import_tasks: tasks/vscode-setup.ansible.yml
+      ansible.builtin.import_tasks:
+        file: ansible/vscode/tasks/main.ansible.yml
       vars:
         vscode_machine_config: >-
-          {{ lookup('file', './files/vscode-server/machine.json') }}
+          {{ lookup('file', './vscode/server/machine.json') }}
         vscode_workspaces:
           - path: "~"
             config: >-
-              {{ lookup('file', './files/vscode-server/workspace-home.json') }}
+              {{ lookup('file', './vscode/server/workspace-home.json') }}
         vscode_extensions:
           - redhat.ansible
           - mads-hartmann.bash-ide-vscode
