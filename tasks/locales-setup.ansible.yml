@@ -9,7 +9,7 @@
       {% endfor %}
     owner: root
     group: root
-    mode: '0644'
+    mode: "0644"
   register: locales_updated
 
 - name: Load Locales
