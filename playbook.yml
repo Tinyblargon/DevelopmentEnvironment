@@ -60,7 +60,7 @@
           - name:
               - gocover
               - gocoverage
-            command: go test -coverprofile=coverage.out ./...&&go tool cover -html=coverage.out -o coverage.html
+            command: go test -coverprofile=_coverage.out ./...&&go tool cover -html=_coverage.out -o _coverage.html
           - name: x
             command: export
     - name: Set system locales
