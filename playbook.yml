@@ -54,6 +54,10 @@
           - name: tfinfo
             command: export "TF_LOG"=INFO
           - name:
+              - gc
+              - gitc
+            command: git clone
+          - name:
               - goc
               - goclean
             command: go clean -testcache
