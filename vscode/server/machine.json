@@ -127,6 +127,9 @@
         "LEGACY"
     ],
     "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "checklist"
+        },
         "[-]": {
             "icon": "no-entry",
             "iconColour": "red",
