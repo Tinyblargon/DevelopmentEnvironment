@@ -119,12 +119,26 @@
         "TODO",
         "XXX",
         "[ ]",
+        "[-]",
+        "[.]",
         "[x]",
         "Deprecated",
         "DEPRECATED",
         "LEGACY"
     ],
     "todo-tree.highlights.customHighlight": {
+        "[-]": {
+            "icon": "no-entry",
+            "iconColour": "red",
+            "background": "black",
+            "foreground": "gray"
+        },
+        "[.]": {
+            "icon": "issue-opened",
+            "iconColour": "#dafbe1",
+            "background": "#dafbe1",
+            "foreground": "black"
+        },
         "[x]": {
             "background": "green"
         },
