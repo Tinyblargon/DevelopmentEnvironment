@@ -31,7 +31,7 @@
     "hidefiles.version": "2.0.0",
     "redhat.telemetry.enabled": false,
     "workbench.editor.customLabels.patterns": {
-        "**/*.ansible.yml": "${filename} (${extname(1)})",
+        "**/*.ansible.yml": "${filename}",
         "**/*.go": "${filename}",
         "**/*.nginx.conf": "${filename} (${extname(1)})",
         "**/README.md": "README",
