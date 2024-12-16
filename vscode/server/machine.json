@@ -122,9 +122,10 @@
         "[-]",
         "[.]",
         "[x]",
-        "Deprecated",
         "DEPRECATED",
-        "LEGACY"
+        "Deprecated",
+        "LEGACY",
+        "REPORT"
     ],
     "todo-tree.highlights.customHighlight": {
         "TODO": {
@@ -160,6 +161,11 @@
         "LEGACY": {
             "icon": "calendar",
             "iconColour": "red"
+        },
+        "REPORT": {
+            "icon": "report",
+            "iconColour": "orange",
+            "foreground": "orange"
         }
     },
     "vscord.app.name": "Visual Studio Code",
