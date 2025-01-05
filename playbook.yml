@@ -81,6 +81,9 @@
         name: inkscape
         state: present
         cache_valid_time: 900
+    - name: Install influxdb2-client
+      ansible.builtin.import_tasks:
+        file: ansible/influxdb/tasks/main.ansible.yml
     - name: Install Docker
       ansible.builtin.include_role:
         name: geerlingguy.docker
