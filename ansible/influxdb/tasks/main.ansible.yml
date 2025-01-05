@@ -2,7 +2,7 @@
 - name: Check if GPG key is already installed
   ansible.builtin.stat:
     path: /etc/apt/trusted.gpg.d/influxdata-archive.gpg
-  register: influx_gpg_key
+  register: influxdb_gpg_key
 
 - name: Download InfluxDB GPG key
   ansible.builtin.get_url:
@@ -10,25 +10,25 @@
     mode: "0644"
     dest: /tmp/influxgpg
     checksum: sha256:943666881a1b8d9b849b74caebf02d3465d6beb716510d86a39f6c8e8dac7515 # curl -sL https://repos.influxdata.com/influxdata-archive.key | sha256sum
-  when: influx_gpg_key.stat.exists is false
+  when: influxdb_gpg_key.stat.exists is false
 
 - name: De-Armor InfluxDB GPG key
   ansible.builtin.command:
     cmd: gpg --output /etc/apt/trusted.gpg.d/influxdata-archive.gpg --dearmor /tmp/influxgpg
   no_log: true
   changed_when: true
-  when: influx_gpg_key.stat.exists is false
+  when: influxdb_gpg_key.stat.exists is false
 
 - name: Add InfluxDB repository
   ansible.builtin.apt_repository:
     repo: "deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive.gpg] https://repos.influxdata.com/debian stable main"
     state: present
-  register: influx_repo
+  register: influxdb_repo
 
 - name: Update apt cache
   ansible.builtin.apt:
     update_cache: true
-  when: influx_repo.changed
+  when: influxdb_repo.changed
 
 - name: Install influxdb2-client
   ansible.builtin.apt:
