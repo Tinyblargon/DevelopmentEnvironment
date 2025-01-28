@@ -94,7 +94,13 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 {% for export in oh_my_zsh_exports | default([]) %}
+{% if export.name is string and export.name is iterable %}
 export {{ export.name }}="{{ export.value }}"
+{% else %}
+{% for name in export.name | default([]) %}
+export {{ name }}="{{ export.value }}"
+{% endfor %}
+{% endif %}
 {% endfor %}
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -106,7 +112,7 @@ export {{ export.name }}="{{ export.value }}"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 {% for alias in oh_my_zsh_aliases | default([]) %}
-{% if alias.name is string and alias.name is iterable%}
+{% if alias.name is string and alias.name is iterable %}
 alias {{ alias.name }}="{{ alias.command }}"
 {% else %}
 {% for name in alias.name | default([]) %}
