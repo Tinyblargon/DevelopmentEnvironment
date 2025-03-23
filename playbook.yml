@@ -95,10 +95,9 @@
         file: ansible/terraform/tasks/main.ansible.yml
     - name: Install GO
       ansible.builtin.include_role:
-        name: darkwizard242.go
+        name: tinyblargon.go
       vars:
         go_version: "1.21.0"
-        go_setup: true
     - name: Install GO tools
       ansible.builtin.import_tasks:
         file: ansible/go_tools/tasks/main.ansible.yml
