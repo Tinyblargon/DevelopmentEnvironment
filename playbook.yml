@@ -97,7 +97,8 @@
       ansible.builtin.include_role:
         name: tinyblargon.go
       vars:
-        go_version: "1.21.0"
+        go_version: "1.24.1"
+        go_checksum: sha256:cb2396bae64183cdccf81a9a6df0aea3bce9511fc21469fb89a0c00470088073
     - name: Install GO tools
       ansible.builtin.import_tasks:
         file: ansible/go_tools/tasks/main.ansible.yml
