@@ -2,6 +2,7 @@
     "accessibility.signals.onDebugBreak": {
         "sound": "on"
     },
+    "ansible.lightspeed.enabled": false,
     "conventionalCommits.gitmoji": false,
     "conventionalCommits.promptScopes": false,
     "editor.fontFamily": "Fira Code",
