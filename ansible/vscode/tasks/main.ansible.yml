@@ -6,17 +6,17 @@
     dest: ~/.vscode-server/data/Machine/settings.json
     mode: "0644"
 
-- name: Create .vscode directory
+- name: Create .vscode directorys
   become: false
   ansible.builtin.file:
     path: "{{ item.path }}/.vscode"
     state: directory
     mode: "0755"
-  loop: "{{ vscode_workpaces | default([]) }}"
+  loop: "{{ vscode_workspaces | default([]) }}"
   loop_control:
     label: "{{ item.path }}"
 
-- name: Copy vscode-server settings
+- name: Copy vscode-workspace settings
   become: false
   ansible.builtin.copy:
     content: "{{ item.config }}"
