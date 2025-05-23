@@ -144,4 +144,5 @@
           - davidanson.vscode-markdownlint
           - hangxingliu.vscode-systemd-support
           - ahmadalli.vscode-nginx-conf
+          - yandeu.five-server
           - wix.vscode-import-cost
