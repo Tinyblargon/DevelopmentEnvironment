@@ -21,6 +21,8 @@
           - name: PATH
             value: $PATH:/usr/local/go/bin
         oh_my_zsh_aliases:
+          - name: ll
+            command: ls --all --human-readable -l
           - name: tf
             command: terraform
           - name: tfc
