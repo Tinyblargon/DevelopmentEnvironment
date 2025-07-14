@@ -5,6 +5,13 @@
   vars_files:
     - secrets.yml
   tasks:
+    - name: Setup git
+      ansible.builtin.import_tasks:
+        file: ansible/git/tasks/main.ansible.yml
+      vars:
+        git_dir: "/home/{{ local_user }}"
+        git_name: "{{ name }}"
+        git_email: "{{ email }}"
     - name: Setup oh-my-zsh
       ansible.builtin.import_tasks:
         file: ansible/oh_my_zsh/tasks/main.ansible.yml

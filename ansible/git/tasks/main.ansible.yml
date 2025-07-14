@@ -1,0 +1,14 @@
+---
+- name: Ensure git is installed
+  ansible.builtin.package:
+    name:
+      - git
+      - git-lfs
+
+- name: Configure .gitconfig
+  ansible.builtin.template:
+    src: "{{ git_template | default('../template/.gitconfig.j2') }}"
+    dest: "{{ git_dir }}/.gitconfig"
+    owner: "{{ git_owner | default(omit) }}"
+    group: "{{ git_group | default(omit) }}"
+    mode: "{{ git_mode | default(omit) }}"

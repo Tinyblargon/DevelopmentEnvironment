@@ -1,0 +1,8 @@
+# Ansible managed
+[color]
+    ui = {{ git_color | default("true") }}
+[user]
+    name = {{ git_name }}
+    email = {{ git_email }}
+[init]
+    defaultBranch = {{ git_default_branch | default("main") }}
