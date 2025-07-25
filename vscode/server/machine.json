@@ -62,6 +62,10 @@
   "[go]": {
     "editor.formatOnSave": true
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
