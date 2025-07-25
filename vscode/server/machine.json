@@ -119,6 +119,7 @@
       }
     ]
   },
+  "explicitFolding.wildcardExclusions": ["python", "ansible", "yaml"],
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
