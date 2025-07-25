@@ -1,179 +1,180 @@
 {
-    "accessibility.signals.onDebugBreak": {
-        "sound": "on"
-    },
-    "ansible.lightspeed.enabled": false,
-    "conventionalCommits.gitmoji": false,
-    "conventionalCommits.promptScopes": false,
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 13,
-    "editor.inlineSuggest.enabled": true,
-    "editor.linkedEditing": true,
-    "editor.minimap.renderCharacters": false,
-    "editor.stickyScroll.enabled": true,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.excludeGitIgnore": false,
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "git.enableSmartCommit": true,
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": true,
-        "scminput": false
-    },
-    "go.formatTool": "goimports",
-    "go.toolsManagement.autoUpdate": false,
-    "gopls": {
-        "ui.semanticTokens": true,
-        "ui.diagnostic.staticcheck": true
-    },
-    "hidefiles.version": "2.0.0",
-    "redhat.telemetry.enabled": false,
-    "workbench.editor.customLabels.patterns": {
-        "**/*.ansible.yml": "${filename}",
-        "**/*.go": "${filename}",
-        "**/*.nginx.conf": "${filename} (${extname(1)})",
-        "**/README.md": "README",
-        "**/main.yml": "${dirname}/main.yml"
-    },
-    "workbench.editor.wrapTabs": true,
-    "terminal.integrated.scrollback": 10000,
-    "files.associations": {
-        ".ansible-lint": "yaml",
-        "main.yml": "ansible",
-        "requirements.yml": "ansible"
-    },
-    "[ansible]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
-        "editor.rulers": [
-            {
-                "column": 80,
-                "color": "#FFA500"
-            },
-            {
-                "column": 160,
-                "color": "#ff0000"
-            }
-        ]
-    },
-    "[go]": {
-        "editor.formatOnSave": true
-    },
-    "[yaml]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "keep",
-        "diffEditor.ignoreTrimWhitespace": false,
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": false,
-            "strings": true
-        }
-    },
-    "explicitFolding.rules": {
-        "go":[
-            {
-                "begin": "import (",
-                "end": ")",
-                "autoFold": true,
-                "foldLastLine": true
-            },
-            {
-                "beginRegex": "\\{",
-                "middleRegex": "\\}[^{]*\\{(?!})",
-                "endRegex": "\\}"
-            }
-        ],
-        "html": {
-            "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>\/]*>",
-            "endRegex": "<\\/\\1>"
-        },
-        "json": [
-            {
-                "beginRegex": "\\{",
-                "middleRegex": "\\}[^}]+\\{",
-                "endRegex": "\\}"
-            },
-            {
-                "beginRegex": "\\[",
-                "middleRegex": "\\][^]]+\\[",
-                "endRegex": "\\]"
-            }
-        ],
-        "vue":[ {
-            "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>\/]*>",
-            "endRegex": "<\\/\\1>"
-        }, 
-        {
-            "beginRegex": "\\{",
-            "middleRegex": "\\}[^}]+\\{",
-            "endRegex": "\\}"
-        }
-        ]
-    },
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[-]",
-        "[.]",
-        "[x]",
-        "DEPRECATED",
-        "Deprecated",
-        "LEGACY",
-        "REPORT"
-    ],
-    "todo-tree.highlights.customHighlight": {
-        "TODO": {
-            "icon": "checklist"
-        },
-        "[-]": {
-            "icon": "no-entry",
-            "iconColour": "red",
-            "background": "black",
-            "foreground": "gray"
-        },
-        "[.]": {
-            "icon": "issue-opened",
-            "iconColour": "#dafbe1",
-            "background": "#dafbe1",
-            "foreground": "black"
-        },
-        "[x]": {
-            "background": "green"
-        },
-        "Deprecated": {
-            "icon": "x",
-            "iconColour": "red",
-            "foreground": "red",
-            "background": "black"
-        },
-        "DEPRECATED": {
-            "icon": "x",
-            "iconColour": "red",
-            "foreground": "red",
-            "background": "black"
-        },
-        "LEGACY": {
-            "icon": "calendar",
-            "iconColour": "red"
-        },
-        "REPORT": {
-            "icon": "report",
-            "iconColour": "orange",
-            "foreground": "orange"
-        }
-    },
-    "vscord.app.name": "Visual Studio Code",
-    "vscord.app.privacyMode.enable": true,
-    "vscord.behaviour.additionalFileMapping": {
-        "ansible.yml": "ansible",
-        "main.yml": "ansible"
+  "accessibility.signals.onDebugBreak": {
+    "sound": "on"
+  },
+  "ansible.lightspeed.enabled": false,
+  "conventionalCommits.gitmoji": false,
+  "conventionalCommits.promptScopes": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.stickyScroll.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.excludeGitIgnore": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "go.formatTool": "goimports",
+  "go.toolsManagement.autoUpdate": false,
+  "gopls": {
+    "ui.semanticTokens": true,
+    "ui.diagnostic.staticcheck": true
+  },
+  "hidefiles.version": "2.0.0",
+  "redhat.telemetry.enabled": false,
+  "workbench.editor.customLabels.patterns": {
+    "**/*.ansible.yml": "${filename}",
+    "**/*.go": "${filename}",
+    "**/*.nginx.conf": "${filename} (${extname(1)})",
+    "**/README.md": "README",
+    "**/main.yml": "${dirname}/main.yml"
+  },
+  "workbench.editor.wrapTabs": true,
+  "terminal.integrated.scrollback": 10000,
+  "files.associations": {
+    ".ansible-lint": "yaml",
+    "main.yml": "ansible",
+    "requirements.yml": "ansible"
+  },
+  "[ansible]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      {
+        "column": 80,
+        "color": "#FFA500"
+      },
+      {
+        "column": 160,
+        "color": "#ff0000"
+      }
+    ]
+  },
+  "[go]": {
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
     }
+  },
+  "explicitFolding.rules": {
+    "go": [
+      {
+        "begin": "import (",
+        "end": ")",
+        "autoFold": true,
+        "foldLastLine": true
+      },
+      {
+        "beginRegex": "\\{",
+        "middleRegex": "\\}[^{]*\\{(?!})",
+        "endRegex": "\\}"
+      }
+    ],
+    "html": {
+      "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>/]*>",
+      "endRegex": "<\\/\\1>"
+    },
+    "json": [
+      {
+        "beginRegex": "\\{",
+        "middleRegex": "\\}[^}]+\\{",
+        "endRegex": "\\}"
+      },
+      {
+        "beginRegex": "\\[",
+        "middleRegex": "\\][^]]+\\[",
+        "endRegex": "\\]"
+      }
+    ],
+    "vue": [
+      {
+        "beginRegex": "<(?!area|base|br|col|embed|hr|img|input|link|menuitem|meta|param|source|track|wbr)([a-zA-Z0-9]+)[^>/]*>",
+        "endRegex": "<\\/\\1>"
+      },
+      {
+        "beginRegex": "\\{",
+        "middleRegex": "\\}[^}]+\\{",
+        "endRegex": "\\}"
+      }
+    ]
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[-]",
+    "[.]",
+    "[x]",
+    "DEPRECATED",
+    "Deprecated",
+    "LEGACY",
+    "REPORT"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "checklist"
+    },
+    "[-]": {
+      "icon": "no-entry",
+      "iconColour": "red",
+      "background": "black",
+      "foreground": "gray"
+    },
+    "[.]": {
+      "icon": "issue-opened",
+      "iconColour": "#dafbe1",
+      "background": "#dafbe1",
+      "foreground": "black"
+    },
+    "[x]": {
+      "background": "green"
+    },
+    "Deprecated": {
+      "icon": "x",
+      "iconColour": "red",
+      "foreground": "red",
+      "background": "black"
+    },
+    "DEPRECATED": {
+      "icon": "x",
+      "iconColour": "red",
+      "foreground": "red",
+      "background": "black"
+    },
+    "LEGACY": {
+      "icon": "calendar",
+      "iconColour": "red"
+    },
+    "REPORT": {
+      "icon": "report",
+      "iconColour": "orange",
+      "foreground": "orange"
+    }
+  },
+  "vscord.app.name": "Visual Studio Code",
+  "vscord.app.privacyMode.enable": true,
+  "vscord.behaviour.additionalFileMapping": {
+    "ansible.yml": "ansible",
+    "main.yml": "ansible"
+  }
 }
