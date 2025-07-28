@@ -1,24 +1,22 @@
 {
-    "hidefiles.configurationType": "local",
-    "hidefiles.globalConfig": {
-        "profiles": [
-            {
-                "name": "Home",
-                "description": "",
-                "detail": "",
-                "peek": [],
-                "hidden": [
-                    ".*/"
-                ]
-            }
-        ]
-    },
-    "hidefiles.selectedProfile": "Show All Files",
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true
-    }
+  "hidefiles.configurationType": "local",
+  "hidefiles.globalConfig": {
+    "profiles": [
+      {
+        "name": "Home",
+        "description": "",
+        "detail": "",
+        "peek": [],
+        "hidden": [".*/"]
+      }
+    ]
+  },
+  "hidefiles.selectedProfile": "Show All Files",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  }
 }

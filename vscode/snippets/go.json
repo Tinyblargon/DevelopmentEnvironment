@@ -1,10 +1,7 @@
 {
-	"if err != nil" : {
-		"prefix": ["iferr"],
-		"body": ["if err != nil {",
-			"\treturn",
-			"}"
-		],
-		"description": "Return on error"
-	}
+  "if err != nil": {
+    "prefix": ["iferr"],
+    "body": ["if err != nil {", "\treturn", "}"],
+    "description": "Return on error"
+  }
 }
