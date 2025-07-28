@@ -118,7 +118,12 @@
       ansible.builtin.import_tasks:
         file: ansible/go_tools/tasks/main.ansible.yml
       vars:
-        go_path: "/usr/local/go"
+        go_root: "/usr/local/go"
+        go_modules:
+          - name: github.com/go-delve/delve/cmd/dlv
+          - name: golang.org/x/tools/cmd/goimports
+          - name: honnef.co/go/tools/cmd/staticcheck
+          - name: golang.org/x/tools/gopls
     - name: Install VSCode extensions
       ansible.builtin.import_tasks:
         file: ansible/vscode/tasks/main.ansible.yml

@@ -6,19 +6,22 @@
   register: apt_action
   until: apt_action is success or ('Failed to lock apt for exclusive operation' not in apt_action.msg and '/var/lib/dpkg/lock' not in apt_action.msg)
 
-- name: Get go path
-  ansible.builtin.set_fact:
-    go_path_tmp: "{{ go_path | default(lookup('env', 'GOPATH')) + '/bin/go' }}"
-
 - name: Install go modules
-  ansible.builtin.command: "{{ go_path_tmp }} install {{ item }}"
-  loop:
-    - github.com/go-delve/delve/cmd/dlv@latest
-    - golang.org/x/tools/cmd/goimports@latest
-    - honnef.co/go/tools/cmd/staticcheck@latest
-    - golang.org/x/tools/gopls@latest
+  ansible.builtin.command:
+    cmd: >-
+      {{ go_root_used + '/bin/go' }} install {{ item.name + go_item_version }}
+  loop: "{{ go_modules }}"
+  loop_control:
+    label: "{{ item.name }}"
   environment:
-    GOPATH: "{{ go_path | default(lookup('env', 'GOPATH')) }}"
+    GOROOT: "{{ go_root_used }}"
+  vars:
+    go_root_used: "{{ go_root | default(lookup('env', 'GOROOT')) }}"
+    go_item_version: >-
+      {{ '' if '@' in item.name else
+        ('@' + (item.version
+          if item.version is defined and item.version != '' else 'latest')) }}
   register: go_install
-  when: go_path != "/bin/go"
-  changed_when: go_install.stderr != ""
+  when: go_root != "/bin/go"
+  changed_when: (go_install.stderr_lines
+    | reject('search', ' requires go >= ') | list | length) > 0
