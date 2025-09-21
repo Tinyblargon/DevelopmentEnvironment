@@ -2,6 +2,10 @@
 
 My Development Environment
 
+## Prerequisites
+
+- [Mount cache disk (optional)](docs/cache_disk.md)
+
 ## Install ansible
 
 ```bash
