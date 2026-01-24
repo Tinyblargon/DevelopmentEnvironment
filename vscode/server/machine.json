@@ -24,6 +24,7 @@
     "scminput": false
   },
   "go.formatTool": "goimports",
+  "go.testFlags": ["-v", "-timeout", "30m"],
   "go.toolsManagement.autoUpdate": false,
   "gopls": {
     "ui.semanticTokens": true,
