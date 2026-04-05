@@ -67,6 +67,10 @@
               - gitc
             command: git clone
           - name:
+              - gp
+              - gpull
+            command: git pull
+          - name:
               - goc
               - goclean
             command: go clean -testcache
@@ -80,8 +84,14 @@
               - gomt
               - gmt
             command: go mod tidy
+          - name:
+              - gog
+              - goget
+            command: go get
           - name: x
             command: export
+          - name: nano
+            command: code
     - name: Set system locales
       ansible.builtin.import_tasks:
         file: ansible/locales/tasks/main.ansible.yml
