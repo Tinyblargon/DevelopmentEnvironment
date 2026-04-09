@@ -15,7 +15,7 @@ cd DevelopmentEnvironment
 ## Populate Secrets
 
 ```bash
-cp secrets.yml.example secrets.yml --no-clobber
+cp --no-clobber --recursive --no-target-directory .secrets.example .secrets
 ```
 
 ## Import Ansible Roles

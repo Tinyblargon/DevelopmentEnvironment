@@ -2,16 +2,18 @@
 - name: Setup development environment
   hosts: localhost
   become: true
-  vars_files:
-    - secrets.yml
+  vars:
+    local_user: "{{ lookup('file', '.secrets/LOCAL_USERNAME') }}"
+    local_users:
+      - "{{ local_user }}"
   tasks:
     - name: Setup git
       ansible.builtin.import_tasks:
         file: ansible/git/tasks/main.ansible.yml
       vars:
         git_dir: "/home/{{ local_user }}"
-        git_name: "{{ name }}"
-        git_email: "{{ email }}"
+        git_name: "{{ lookup('file', '.secrets/GIT_NAME') }}"
+        git_email: "{{ lookup('file', '.secrets/GIT_EMAIL') }}"
     - name: Setup oh-my-zsh
       ansible.builtin.import_tasks:
         file: ansible/oh_my_zsh/tasks/main.ansible.yml

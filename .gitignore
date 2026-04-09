@@ -1,2 +1,5 @@
-secrets.yml
 .vscode
+
+.secrets
+
+.ansible
