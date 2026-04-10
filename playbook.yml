@@ -148,10 +148,11 @@
               {{ lookup('file', './vscode/server/workspace-home.json') }}
         vscode_extensions:
           - redhat.ansible
+          - redhat.vscode-yaml
           - mads-hartmann.bash-ide-vscode
           - alefragnani.bookmarks
           - streetsidesoftware.code-spell-checker
-          - github.copilot
+          - github.copilot-chat
           - usernamehw.errorlens
           - zokugun.explicit-folding
           - golang.go
@@ -180,4 +181,8 @@
           - patriciodiaz.go-struct-analyzer
           - janisdd.vscode-edit-csv
           - mechatroner.rainbow-csv
+          - ms-azuretools.vscode-containers
+          - ms-vscode.makefile-tools
+          - ms-python.python
+          - ms-python.vscode-python-envs
           - wix.vscode-import-cost

@@ -36,10 +36,6 @@
   ansible.builtin.set_fact:
     vscode_location: "{{ which_output.stdout }}"
 
-- name: Show vscode path
-  ansible.builtin.debug:
-    msg: "{{ vscode_location }}"
-
 - name: Install VScode extensions
   become: false
   ansible.builtin.command: "{{ vscode_location }} --install-extension {{ item }}"
@@ -54,3 +50,16 @@
     or ("\nFailed Installing"
     in vscode_extensions_output.stdout)
   when: vscode_extensions is defined
+
+- name: List installed VScode extensions
+  become: false
+  ansible.builtin.command: "{{ vscode_location }} --list-extensions"
+  register: vscode_list_output
+  changed_when: false
+
+- name: Remove VScode extensions
+  become: false
+  ansible.builtin.command: "{{ vscode_location }} --uninstall-extension {{ item }}"
+  loop: "{{ vscode_list_output.stdout_lines | reject('search', ' ')
+    | list | difference(vscode_extensions) }}"
+  changed_when: true
