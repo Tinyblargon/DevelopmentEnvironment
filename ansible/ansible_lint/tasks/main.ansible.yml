@@ -3,9 +3,7 @@
   ansible.builtin.apt:
     name: ansible-lint
     cache_valid_time: 900
-  when: >
-    ansible_distribution == 'Debian'
-    or
-    ansible_distribution == 'Ubuntu'
+  when: ansible_facts['distribution'] == 'Debian'
+    or ansible_facts['distribution'] == 'Ubuntu'
   register: apt_action
   until: apt_action is success or ('Failed to lock apt for exclusive operation' not in apt_action.msg and '/var/lib/dpkg/lock' not in apt_action.msg)
