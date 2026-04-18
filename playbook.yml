@@ -27,6 +27,37 @@
           - terraform
           - vscode
         oh_my_zsh_exports:
+          # MANPAGE colors, from: https://gist.github.com/bahamas10/542875bb47990933638d2b7dfaa501bf
+          - name: LESS_TERMCAP_mb # Begin blinking text mode
+            value: $'\e[1;31m'
+          - name: LESS_TERMCAP_md # Begin bold text mode
+            value: $'\e[1;31m'
+          - name: LESS_TERMCAP_me # End all special formatting started by mb/md/etc.
+            value: $'\e[0m'
+          - name: LESS_TERMCAP_se # End standout mode
+            value: $'\e[0m'
+          - name: LESS_TERMCAP_so # Begin standout mode
+            value: $'\e[1;33;44m' # search results - bold, yellow foreground, blue background.
+          - name: LESS_TERMCAP_ue # End underline mode
+            value: $'\e[0m'
+          - name: LESS_TERMCAP_us # Begin underline mode
+            value: $'\e[4;1;32m' # underline and bold green
+          - name: LESS_TERMCAP_mr # Begin reverse-video mode
+            value: $'\e[7m'
+          - name: LESS_TERMCAP_mh # Begin dim/half-bright mode
+            value: $'\e[2m'
+          - name: LESS_TERMCAP_ZN # Begin subscript mode
+            value: $'\e[74m'
+          - name: LESS_TERMCAP_ZV # End subscript mode
+            value: $'\e[75m'
+          - name: LESS_TERMCAP_ZO # Begin superscript mode
+            value: $'\e[73m'
+          - name: LESS_TERMCAP_ZW # End superscript mode
+            value: $'\e[75m'
+          - name: GROFF_NO_SGR
+            value: 1
+          - name: MANPAGER # Finally wire up `man` to use `less`
+            value: less
           - name: PATH
             value: $PATH:/usr/local/go/bin
         oh_my_zsh_aliases:
