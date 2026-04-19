@@ -93,15 +93,19 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-{% for export in oh_my_zsh_exports | default([]) %}
+{% if oh_my_zsh_exports is defined and oh_my_zsh_exports | length > 0 %}
+set -o allexport
+{% for export in oh_my_zsh_exports %}
 {% if export.name is string and export.name is iterable %}
-export {{ export.name }}="{{ export.value }}"
+{{ export.name }}={{ export.value }}
 {% else %}
-{% for name in export.name | default([]) %}
-export {{ name }}="{{ export.value }}"
+{% for name in export.name %}
+{{ name }}={{ export.value }}
 {% endfor %}
 {% endif %}
 {% endfor %}
+set +o allexport
+{% endif %}
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
