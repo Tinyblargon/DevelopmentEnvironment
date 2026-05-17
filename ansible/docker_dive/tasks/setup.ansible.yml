@@ -1,0 +1,25 @@
+---
+- name: Create temporary directory
+  ansible.builtin.tempfile:
+    state: directory
+  register: docker_dive_tempdir
+
+- name: Download dive .deb file
+  ansible.builtin.get_url:
+    url: >-
+      {{ 'https://github.com/wagoodman/dive/releases/download/v'
+      + docker_dive_version + '/dive_'
+      + docker_dive_version + '_linux_amd64.deb' }}
+    dest: "{{ docker_dive_tempdir.path }}/dive.deb"
+    checksum: "{{ docker_dive_checksum | default(omit) }}"
+    mode: "0655"
+
+- name: Install dive
+  ansible.builtin.apt:
+    deb: "{{ docker_dive_tempdir.path }}/dive.deb"
+    state: present
+
+- name: Remove temporary directory
+  ansible.builtin.file:
+    path: "{{ docker_dive_tempdir.path }}"
+    state: absent

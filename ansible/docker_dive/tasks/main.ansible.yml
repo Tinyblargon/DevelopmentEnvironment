@@ -1,0 +1,18 @@
+---
+- name: Check if dive is installed
+  ansible.builtin.stat:
+    path: /usr/bin/dive
+  register: docker_dive_file
+
+- name: Check docker dive version
+  ansible.builtin.command:
+    cmd: /usr/bin/dive --version
+  changed_when: false
+  register: docker_dive_returned_version
+  when: docker_dive_file.stat.exists
+
+- name: Setup docker dive
+  ansible.builtin.include_tasks:
+    file: setup.ansible.yml
+  when: (not docker_dive_file.stat.exists)
+    or docker_dive_returned_version.stdout[5:] != docker_dive_version
