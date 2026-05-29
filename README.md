@@ -27,7 +27,7 @@ ansible-galaxy install --force --role-file requirements.ansible.yml
 ## Deploy
 
 ```bash
-ansible-playbook -K playbook.yml
+ansible-playbook --ask-become-pass playbook.yml
 ```
 
 ### Manual steps
