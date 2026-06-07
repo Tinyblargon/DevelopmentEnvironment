@@ -154,42 +154,44 @@
             config: >-
               {{ lookup('file', './vscode/server/workspace-home.json') }}
         vscode_extensions:
+          - 42crunch.vscode-openapi
+          - ahmadalli.vscode-nginx-conf
+          - alefragnani.bookmarks
+          - davidanson.vscode-markdownlint
+          - eamodio.gitlens
+          - esbenp.prettier-vscode
+          - george-alisson.html-preview-vscode
+          - github.copilot-chat
+          - golang.go
+          - gruntfuggly.todo-tree
+          - gurumukhi.selected-lines-count
+          - hangxingliu.vscode-systemd-support
+          - hashicorp.terraform
+          - hediet.vscode-drawio
+          - janisdd.vscode-edit-csv
+          - jeff-hykin.polacode-2019
+          - jeremyfunk.hidefiles
+          - jock.svg
+          - leonardssh.vscord
+          - mads-hartmann.bash-ide-vscode
+          - mechatroner.rainbow-csv
+          - meezilla.json
+          - ms-azuretools.vscode-containers
+          - ms-azuretools.vscode-docker
+          - ms-python.debugpy
+          - ms-python.python
+          - ms-python.vscode-pylance
+          - ms-python.vscode-python-envs
+          - ms-vscode.makefile-tools
+          - oderwat.indent-rainbow
+          - patriciodiaz.go-struct-analyzer
           - redhat.ansible
           - redhat.vscode-yaml
-          - mads-hartmann.bash-ide-vscode
-          - alefragnani.bookmarks
-          - streetsidesoftware.code-spell-checker
-          - github.copilot-chat
-          - usernamehw.errorlens
-          - zokugun.explicit-folding
-          - golang.go
-          - eamodio.gitlens
-          - george-alisson.html-preview-vscode
-          - jeremyfunk.hidefiles
-          - oderwat.indent-rainbow
-          - meezilla.json
           - samuelcolvin.jinjahtml
-          - jeff-hykin.polacode-2019
-          - esbenp.prettier-vscode
-          - gurumukhi.selected-lines-count
+          - streetsidesoftware.code-spell-checker
           - tyriar.sort-lines
-          - jock.svg
-          - hashicorp.terraform
-          - gruntfuggly.todo-tree
-          - leonardssh.vscord
+          - usernamehw.errorlens
           - vivaxy.vscode-conventional-commits
-          - ms-azuretools.vscode-docker
-          - hediet.vscode-drawio
-          - 42crunch.vscode-openapi
-          - davidanson.vscode-markdownlint
-          - hangxingliu.vscode-systemd-support
-          - ahmadalli.vscode-nginx-conf
-          - yandeu.five-server
-          - patriciodiaz.go-struct-analyzer
-          - janisdd.vscode-edit-csv
-          - mechatroner.rainbow-csv
-          - ms-azuretools.vscode-containers
-          - ms-vscode.makefile-tools
-          - ms-python.python
-          - ms-python.vscode-python-envs
           - wix.vscode-import-cost
+          - yandeu.five-server
+          - zokugun.explicit-folding
