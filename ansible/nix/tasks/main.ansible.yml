@@ -1,0 +1,21 @@
+---
+- name: Ensure nix and dependencies are installed
+  ansible.builtin.apt:
+    name:
+      - direnv
+      - nix-setup-systemd
+    state: present
+
+- name: Ensure user is in nix users group
+  ansible.builtin.user:
+    name: "{{ nix_user }}"
+    groups: nix-users
+    append: true
+
+- name: Enforce nix configuration
+  ansible.builtin.copy:
+    dest: /etc/nix/nix.conf
+    src: ../files/nix.conf
+    owner: root
+    group: root
+    mode: "0644"

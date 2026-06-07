@@ -14,6 +14,11 @@
         git_dir: "/home/{{ local_user }}"
         git_name: "{{ lookup('file', '.secrets/GIT_NAME') }}"
         git_email: "{{ lookup('file', '.secrets/GIT_EMAIL') }}"
+    - name: Setup Nix
+      ansible.builtin.import_tasks:
+        file: ansible/nix/tasks/main.ansible.yml
+      vars:
+        nix_user: "{{ local_user }}"
     - name: Setup oh-my-zsh
       ansible.builtin.import_tasks:
         file: ansible/oh_my_zsh/tasks/main.ansible.yml
@@ -22,6 +27,7 @@
         oh_my_zsh_theme: robbyrussell
         oh_my_zsh_plugins:
           - colored-man-pages
+          - direnv
           - docker
           - docker-compose
           - git
@@ -107,12 +113,10 @@
     - name: Install required packages
       ansible.builtin.apt:
         name:
-          - direnv
           - dos2unix
           - dtrx
           - inkscape
           - make
-          - nix-setup-systemd
         state: present
         cache_valid_time: 900
     - name: Install influxdb2-client
@@ -163,6 +167,7 @@
           - 42crunch.vscode-openapi
           - ahmadalli.vscode-nginx-conf
           - alefragnani.bookmarks
+          - bbenoist.nix
           - davidanson.vscode-markdownlint
           - eamodio.gitlens
           - esbenp.prettier-vscode
