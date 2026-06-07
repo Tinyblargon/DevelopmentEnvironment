@@ -104,9 +104,15 @@
     - name: Install ansible lint
       ansible.builtin.import_tasks:
         file: ansible/ansible_lint/tasks/main.ansible.yml
-    - name: Install inkscape
+    - name: Install required packages
       ansible.builtin.apt:
-        name: inkscape
+        name:
+          - direnv
+          - dos2unix
+          - dtrx
+          - inkscape
+          - make
+          - nix-setup-systemd
         state: present
         cache_valid_time: 900
     - name: Install influxdb2-client
