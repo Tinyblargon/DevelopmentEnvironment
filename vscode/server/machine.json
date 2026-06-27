@@ -179,6 +179,7 @@
       "foreground": "orange"
     }
   },
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
   "vscord.app.name": "Visual Studio Code",
   "vscord.app.privacyMode.enable": true,
   "vscord.behaviour.additionalFileMapping": {

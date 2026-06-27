@@ -117,6 +117,7 @@
           - dtrx
           - inkscape
           - make
+          - ripgrep # Needed for VScode extension: gruntfuggly.todo-tree
         state: present
         cache_valid_time: 900
     - name: Install influxdb2-client
