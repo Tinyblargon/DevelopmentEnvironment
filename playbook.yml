@@ -6,6 +6,7 @@
     local_user: "{{ lookup('file', '.secrets/LOCAL_USERNAME') }}"
     local_users:
       - "{{ local_user }}"
+    go_path: "/usr/local/go"
   tasks:
     - name: Setup git
       ansible.builtin.import_tasks:
@@ -35,7 +36,7 @@
           - vscode
         oh_my_zsh_exports:
           - name: PATH
-            value: $PATH:/usr/local/go/bin
+            value: "$PATH:{{ go_path }}/bin:/home/{{ local_user }}/go/bin"
         oh_my_zsh_aliases:
           - name: ll
             command: ls --all --human-readable -l
@@ -148,12 +149,26 @@
       ansible.builtin.import_tasks:
         file: ansible/go_tools/tasks/main.ansible.yml
       vars:
-        go_root: "/usr/local/go"
         go_modules:
           - name: github.com/go-delve/delve/cmd/dlv
           - name: golang.org/x/tools/cmd/goimports
           - name: golang.org/x/tools/gopls
           - name: honnef.co/go/tools/cmd/staticcheck
+    - name: Crete Symlinks
+      ansible.builtin.include_tasks:
+        file: ansible/link/tasks/main.ansible.yml
+      vars:
+        link_owner: "{{ local_user }}"
+        link_group: "{{ local_user }}"
+        link:
+          - src: "{{ go_path }}/pkg/mod/github.com/go-delve"
+            dest: "/home/{{ local_user }}/go/pkg/mod/github.com/go-delve"
+          - src: "{{ go_path }}/bin/dlv"
+            dest: "/home/{{ local_user }}/go/bin/dlv"
+          - src: "{{ go_path }}/pkg/mod/golang.org/x/tools"
+            dest: "/home/{{ local_user }}/go/pkg/mod/golang.org/x/tools"
+          - src: "{{ go_path }}/bin/goimports"
+            dest: "/home/{{ local_user }}/go/bin/goimports"
     - name: Install VSCode extensions
       ansible.builtin.import_tasks:
         file: ansible/vscode/tasks/main.ansible.yml

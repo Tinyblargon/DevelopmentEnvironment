@@ -9,19 +9,19 @@
 - name: Install go modules
   ansible.builtin.command:
     cmd: >-
-      {{ go_root_used + '/bin/go' }} install {{ item.name + go_item_version }}
+      {{ go_path_used + '/bin/go' }} install {{ item.name + go_item_version }}
   loop: "{{ go_modules }}"
   loop_control:
     label: "{{ item.name }}"
   environment:
-    GOROOT: "{{ go_root_used }}"
+    GOPATH: "{{ go_path_used }}"
   vars:
-    go_root_used: "{{ go_root | default(lookup('env', 'GOROOT')) }}"
+    go_path_used: "{{ go_path | default(lookup('env', 'GOPATH')) }}"
     go_item_version: >-
       {{ '' if '@' in item.name else
         ('@' + (item.version
           if item.version is defined and item.version != '' else 'latest')) }}
   register: go_install
-  when: go_root != "/bin/go"
+  when: go_path != "/bin/go"
   changed_when: (go_install.stderr_lines
     | reject('search', ' requires go >= ') | list | length) > 0

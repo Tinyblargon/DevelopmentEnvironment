@@ -1,0 +1,23 @@
+---
+- name: Ensure directories exist
+  ansible.builtin.file:
+    path: "{{ item.dest | dirname() }}"
+    state: directory
+    owner: "{{ (item.owner | default(link_owner)) | default(omit) }}"
+    group: "{{ (item.group | default(link_group)) | default(omit) }}"
+    mode: "{{ item.mode | default(omit) }}"
+  loop: "{{ link }}"
+  loop_control:
+    label: "{{ item.dest }}"
+
+- name: Ensure symlink exist
+  ansible.builtin.file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    owner: "{{ (item.owner | default(link_owner)) | default(omit) }}"
+    group: "{{ (item.group | default(link_group)) | default(omit) }}"
+    mode: "{{ item.mode | default(omit) }}"
+  loop: "{{ link }}"
+  loop_control:
+    label: "{{ item.dest }}"
