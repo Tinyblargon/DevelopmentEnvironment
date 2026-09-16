@@ -118,6 +118,7 @@
           - dtrx
           - inkscape
           - make
+          - minify # html, css, js, minifier.
           - ripgrep # Needed for VScode extension: gruntfuggly.todo-tree
         state: present
         cache_valid_time: 900
