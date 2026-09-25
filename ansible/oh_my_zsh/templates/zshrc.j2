@@ -97,7 +97,8 @@ source $ZSH/oh-my-zsh.sh
 set -o allexport
 {% for export in oh_my_zsh_exports %}
 {% if export.name is string and export.name is iterable %}
-{{ export.name }}={{ export.value }}
+{{ export.name }}={% if export.value is string %}{{ export.value }}{% else %}{{ export.value | join(':') }}{% endif %}
+
 {% else %}
 {% for name in export.name %}
 {{ name }}={{ export.value }}
