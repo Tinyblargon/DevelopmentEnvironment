@@ -38,7 +38,8 @@
     "**/*.go": "${filename}",
     "**/*.nginx.conf": "${filename} (${extname(1)})",
     "**/README.md": "README",
-    "**/main.yml": "${dirname}/main.yml"
+    "**/main.yml": "${dirname}/main.yml",
+    "**/mod.rs": "${dirname}/mod.rs"
   },
   "workbench.editor.wrapTabs": true,
   "terminal.integrated.scrollback": 10000,
@@ -67,6 +68,9 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[rust]": {
     "editor.formatOnSave": true
   },
   "[yaml]": {

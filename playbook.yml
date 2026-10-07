@@ -160,6 +160,16 @@
           - name: golang.org/x/tools/cmd/goimports
           - name: golang.org/x/tools/gopls
           - name: honnef.co/go/tools/cmd/staticcheck
+    - name: Install Rust block
+      become: false
+      block:
+        - name: Install Rust
+          ansible.builtin.include_role:
+            name: pluggero.rustup
+          vars:
+            rustup_rust_version: "1.98.1"
+            rustup_config_dir: "{{ user_home }}/.rustup"
+            rustup_cargo_dir: "{{ user_home }}/.cargo"
     - name: Create Symlinks
       ansible.builtin.include_tasks:
         file: ansible/link/tasks/main.ansible.yml
@@ -220,10 +230,12 @@
           - patriciodiaz.go-struct-analyzer
           - redhat.ansible
           - redhat.vscode-yaml
+          - rust-lang.rust-analyzer
           - samuelcolvin.jinjahtml
           - streetsidesoftware.code-spell-checker
           - tyriar.sort-lines
           - usernamehw.errorlens
+          - vadimcn.vscode-lldb
           - vivaxy.vscode-conventional-commits
           - wix.vscode-import-cost
           - yandeu.five-server

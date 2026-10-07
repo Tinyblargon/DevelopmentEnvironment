@@ -3,4 +3,5 @@ collections:
 
 roles:
   - src: tinyblargon.go
+  - src: pluggero.rustup
   - src: geerlingguy.docker
