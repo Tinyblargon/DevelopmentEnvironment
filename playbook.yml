@@ -43,6 +43,8 @@
               - "{{ user_home }}/go/bin"
               - "{{ user_home }}/.cargo/bin"
         oh_my_zsh_aliases:
+          - name: beep
+            command: printf %s $'\a'
           - name: ll
             command: ls --all --human-readable -l
           - name: tf

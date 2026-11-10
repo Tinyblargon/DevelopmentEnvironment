@@ -2,6 +2,9 @@
   "accessibility.signals.onDebugBreak": {
     "sound": "on"
   },
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
   "ansible.lightspeed.enabled": false,
   "conventionalCommits.gitmoji": false,
   "conventionalCommits.promptScopes": false,
@@ -32,6 +35,7 @@
   },
   "hidefiles.version": "2.0.0",
   "redhat.telemetry.enabled": false,
+  "terminal.integrated.enableVisualBell": true,
   "workbench.colorTheme": "Dark Modern",
   "workbench.editor.customLabels.patterns": {
     "**/*.ansible.yml": "${filename}",
